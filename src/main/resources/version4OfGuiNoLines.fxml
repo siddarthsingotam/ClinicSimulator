@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="907.0" prefWidth="1316.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClinicSimController">
+   <children>
+      <Label layoutX="543.0" layoutY="22.0" text="CLINIC SIMULATOR">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="168.0" layoutY="89.0" text="Reception">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="414.0" layoutY="89.0" text="Nurses">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="711.0" layoutY="89.0" text="GeneralPractitioner">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1030.0" layoutY="89.0" text="Laboratory">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Slider blockIncrement="1.0" layoutX="168.0" layoutY="159.0" max="1.0" showTickLabels="true" showTickMarks="true" />
+      <Slider blockIncrement="1.0" layoutX="414.0" layoutY="159.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="2.0" />
+      <Slider blockIncrement="1.0" layoutX="713.0" layoutY="159.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="2.0" />
+      <Slider blockIncrement="1.0" layoutX="1023.0" layoutY="159.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="2.0" />
+      <Slider blockIncrement="5.0" layoutX="1023.0" layoutY="258.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" value="20.0" />
+      <Slider blockIncrement="5.0" layoutX="717.0" layoutY="258.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="20.0" />
+      <Label layoutX="414.0" layoutY="125.0" text="Number of nurses" />
+      <Label layoutX="713.0" layoutY="125.0" text="Number of General Practitioners" />
+      <Label layoutX="1030.0" layoutY="125.0" text="Number of Laboratories" />
+      <Label layoutX="718.0" layoutY="214.0" text="Likelihood of" />
+      <Label layoutX="1023.0" layoutY="214.0" text="Likelihood of " />
+      <Label layoutX="1023.0" layoutY="231.0" text="Returning to General pracitioner" />
+      <Label layoutX="718.0" layoutY="231.0" text="Laboratory visit" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="92.0" layoutY="142.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="354.0" layoutY="142.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="657.0" layoutY="142.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="971.0" layoutY="140.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="100.0" layoutX="238.0" layoutY="351.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="499.0" layoutY="351.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="802.0" layoutY="351.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="1115.0" layoutY="348.0" startX="-100.0" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="294.0" layoutY="142.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="555.0" layoutY="142.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="858.0" layoutY="140.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="44.29290771484375" endY="-61.0" layoutX="1171.0" layoutY="140.0" startX="44.29290771484375" startY="208.0" />
+      <Line endX="100.0" layoutX="238.0" layoutY="80.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="499.0" layoutY="80.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="802.0" layoutY="80.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="1115.0" layoutY="80.0" startX="-100.0" />
+      <Label layoutX="618.0" layoutY="352.0" text="Clock">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label id="Clock" fx:id="clocktime" layoutX="613.0" layoutY="387.0" prefHeight="27.0" prefWidth="69.0" text="00" />
+      <Line endX="100.0" layoutX="296.0" layoutY="519.0" startX="-100.0" />
+      <Label layoutX="129.0" layoutY="434.0" text="Reception">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="397.0" layoutY="434.0" text="Nurses">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="624.0" layoutY="434.0" text="GeneralPractitioner">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="936.0" layoutY="434.0" text="Laboratory">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1253.0" layoutY="505.0" text="Exit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="-51.0" layoutX="191.0" layoutY="518.0" startX="-100.0" />
+      <Rectangle id="Reception" fx:id="reception" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="141.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="Nurses" fx:id="nurse1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="397.0" layoutY="497.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="GeneralPractitioners" fx:id="GP1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="655.0" layoutY="497.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="Laboratory" fx:id="Xray" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="951.0" layoutY="497.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="Nurses" fx:id="nurse3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="397.0" layoutY="661.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="Nurses" fx:id="nurse2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="397.0" layoutY="590.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="Nurses" fx:id="nurse4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="397.0" layoutY="739.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Ellipse fx:id="nurse1Q" fill="WHITE" layoutX="330.0" layoutY="518.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="nurse2Q" fill="WHITE" layoutX="330.0" layoutY="613.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="nurse3Q" fill="WHITE" layoutX="330.0" layoutY="684.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="nurse4Q" fill="WHITE" layoutX="330.0" layoutY="761.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="-53.0" layoutX="450.0" layoutY="761.0" startX="-100.0" />
+      <Line endX="-53.0" layoutX="450.0" layoutY="684.0" startX="-100.0" />
+      <Line endX="-53.0" layoutX="450.0" layoutY="613.0" startX="-100.0" />
+      <Line endX="15.0" endY="93.0" layoutX="296.0" layoutY="520.0" startX="-100.0" />
+      <Line endX="15.0" endY="164.0" layoutX="296.0" layoutY="520.0" startX="-100.0" />
+      <Line endX="37.0" endY="216.0" layoutX="280.0" layoutY="543.0" startX="-84.0" startY="-24.0" />
+      <Rectangle id="GeneralPractitioners" fx:id="GP2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="655.0" layoutY="625.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="GeneralPractitioners" fx:id="GP3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="655.0" layoutY="739.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Ellipse fx:id="GP1Q" fill="WHITE" layoutX="611.0" layoutY="520.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="-66.0" layoutX="721.0" layoutY="648.0" startX="-100.0" />
+      <Ellipse fx:id="GP2Q" fill="WHITE" layoutX="611.0" layoutY="648.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="GP3Q" fill="WHITE" layoutX="611.0" layoutY="762.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="-74.0" layoutX="729.0" layoutY="762.0" startX="-100.0" />
+      <Rectangle id="Laboratory" fx:id="EKG" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="951.0" layoutY="589.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="Laboratory" fx:id="MRI" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="951.0" layoutY="660.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Rectangle id="Laboratory" fx:id="Blood" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="951.0" layoutY="739.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+      <Ellipse fx:id="XrayQ" fill="WHITE" layoutX="910.0" layoutY="521.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="EKGQ" fill="WHITE" layoutX="910.0" layoutY="614.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="MRIQ" fill="WHITE" layoutX="910.0" layoutY="684.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="BloodQ" fill="WHITE" layoutX="910.0" layoutY="762.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="-86.0" layoutX="1037.0" layoutY="614.0" startX="-108.0" />
+      <Line endX="-86.0" layoutX="1037.0" layoutY="685.0" startX="-108.0" />
+      <Line endX="-86.0" layoutX="1037.0" layoutY="762.0" startX="-108.0" />
+      <Line endX="-63.0" endY="-69.0" layoutX="718.0" layoutY="589.0" startX="-88.0" startY="-69.0" />
+      <Line endX="11.0" layoutX="940.0" layoutY="520.0" startX="-11.0" startY="1.0" />
+      <Label layoutX="1010.0" layoutY="509.0" text="Xray" />
+      <Label layoutX="1011.0" layoutY="606.0" text="EKG" />
+      <Label layoutX="1009.0" layoutY="677.0" text="MRI" />
+      <Label layoutX="1016.0" layoutY="751.0" text="Blood" />
+      <Button fx:id="start" layoutX="467.0" layoutY="388.0" mnemonicParsing="false" onMousePressed="#initialize" text="Start Sim" />
+      <Label fx:id="nurse1QLabel" layoutX="316.0" layoutY="509.0" prefHeight="17.0" prefWidth="28.0" text="Label" />
+      <Label fx:id="nurse2QLabel" layoutX="316.0" layoutY="604.0" text="Label" />
+      <Label fx:id="nurse3QLabel" layoutX="316.0" layoutY="677.0" text="Label" />
+      <Label fx:id="nurse4QLabel" layoutX="316.0" layoutY="754.0" text="Label" />
+      <Label fx:id="GP1QLabel" layoutX="597.0" layoutY="509.0" text="Label" />
+      <Label fx:id="GP2QLabel" layoutX="597.0" layoutY="640.0" text="Label" />
+      <Label fx:id="GP3QLabel" layoutX="597.0" layoutY="754.0" text="Label" />
+      <Label fx:id="XrayQLabel" layoutX="896.0" layoutY="512.0" text="Label" />
+      <Label fx:id="EKGQLabel" layoutX="896.0" layoutY="606.0" text="Label" />
+      <Label fx:id="MRIQLabel" layoutX="896.0" layoutY="676.0" text="Label" />
+      <Label fx:id="BloodQLabel" layoutX="896.0" layoutY="754.0" text="Label" />
+      <Label fx:id="receptionQLabel" layoutX="91.0" layoutY="497.0" text="Label" />
+      <Label layoutX="141.0" layoutY="361.0" text="Simulation Time" />
+      <TextField fx:id="simtime" layoutX="122.0" layoutY="388.0" promptText="Enter Simulation Time" />
+      <Label layoutX="349.0" layoutY="361.0" text="Delay" />
+      <TextField fx:id="delaytime" layoutX="290.0" layoutY="388.0" promptText="Enter delay" />
+   </children>
+</Pane>
