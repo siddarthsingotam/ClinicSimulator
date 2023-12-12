@@ -30,4 +30,6 @@ public class Blood extends ServicePoint {
             double serviceTime = generator.sample();
             eventList.addToEventList(new Event(Clock.getInstance().getClock() + serviceTime,eventTypeScheduled));
         }
+
+
 }

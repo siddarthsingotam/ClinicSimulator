@@ -22,6 +22,15 @@ public class EventList {
         System.out.printf(" Adding to the event list %s %.2f", e.getType(), e.getTime());
         eventList.add(e);
     }
+
+    public PriorityQueue<Event> getEventList() {
+        return eventList;
+    }
+
+    public int getSize(){
+        return eventList.size();
+    }
+
     public double getNextEventTime() {
         if (eventList.isEmpty())
             return 0;
