@@ -58,7 +58,7 @@
          </font>
       </Label>
       <Label id="Clock" fx:id="clocktime" layoutX="613.0" layoutY="387.0" prefHeight="27.0" prefWidth="69.0" text="00" />
-      <Line endX="100.0" layoutX="296.0" layoutY="519.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="296.0" layoutY="519.0" startX="55.0" />
       <Label layoutX="129.0" layoutY="434.0" text="Reception">
          <font>
             <Font size="18.0" />
@@ -99,9 +99,6 @@
       <Line endX="-53.0" layoutX="450.0" layoutY="761.0" startX="-100.0" />
       <Line endX="-53.0" layoutX="450.0" layoutY="684.0" startX="-100.0" />
       <Line endX="-53.0" layoutX="450.0" layoutY="613.0" startX="-100.0" />
-      <Line endX="15.0" endY="93.0" layoutX="296.0" layoutY="520.0" startX="-100.0" />
-      <Line endX="15.0" endY="164.0" layoutX="296.0" layoutY="520.0" startX="-100.0" />
-      <Line endX="37.0" endY="216.0" layoutX="280.0" layoutY="543.0" startX="-84.0" startY="-24.0" />
       <Rectangle id="GeneralPractitioners" fx:id="GP2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="655.0" layoutY="625.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
       <Rectangle id="GeneralPractitioners" fx:id="GP3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="655.0" layoutY="739.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
       <Ellipse fx:id="GP1Q" fill="WHITE" layoutX="611.0" layoutY="520.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
@@ -126,18 +123,17 @@
       <Label layoutX="1009.0" layoutY="677.0" text="MRI" />
       <Label layoutX="1016.0" layoutY="751.0" text="Blood" />
       <Button fx:id="start" layoutX="467.0" layoutY="388.0" mnemonicParsing="false" onMousePressed="#initialize" text="Start Sim" />
-      <Label fx:id="nurse1QLabel" layoutX="316.0" layoutY="509.0" prefHeight="17.0" prefWidth="28.0" text="Label" />
-      <Label fx:id="nurse2QLabel" layoutX="316.0" layoutY="604.0" text="Label" />
-      <Label fx:id="nurse3QLabel" layoutX="316.0" layoutY="677.0" text="Label" />
-      <Label fx:id="nurse4QLabel" layoutX="316.0" layoutY="754.0" text="Label" />
-      <Label fx:id="GP1QLabel" layoutX="597.0" layoutY="509.0" text="Label" />
-      <Label fx:id="GP2QLabel" layoutX="597.0" layoutY="640.0" text="Label" />
-      <Label fx:id="GP3QLabel" layoutX="597.0" layoutY="754.0" text="Label" />
-      <Label fx:id="XrayQLabel" layoutX="896.0" layoutY="512.0" text="Label" />
-      <Label fx:id="EKGQLabel" layoutX="896.0" layoutY="606.0" text="Label" />
-      <Label fx:id="MRIQLabel" layoutX="896.0" layoutY="676.0" text="Label" />
-      <Label fx:id="BloodQLabel" layoutX="896.0" layoutY="754.0" text="Label" />
-      <Label fx:id="receptionQLabel" layoutX="91.0" layoutY="497.0" text="Label" />
+      <Label fx:id="nurse1QLabel" layoutX="316.0" layoutY="509.0" prefHeight="17.0" prefWidth="28.0" text="0" />
+      <Label fx:id="nurse2QLabel" layoutX="316.0" layoutY="604.0" text="0" />
+      <Label fx:id="nurse3QLabel" layoutX="316.0" layoutY="677.0" text="0" />
+      <Label fx:id="nurse4QLabel" layoutX="316.0" layoutY="754.0" text="0" />
+      <Label fx:id="GP1QLabel" layoutX="597.0" layoutY="509.0" text="0" />
+      <Label fx:id="GP2QLabel" layoutX="597.0" layoutY="640.0" text="0" />
+      <Label fx:id="GP3QLabel" layoutX="597.0" layoutY="754.0" text="0" />
+      <Label fx:id="XrayQLabel" layoutX="896.0" layoutY="512.0" text="0" />
+      <Label fx:id="EKGQLabel" layoutX="896.0" layoutY="606.0" text="0" />
+      <Label fx:id="MRIQLabel" layoutX="896.0" layoutY="676.0" text="0" />
+      <Label fx:id="BloodQLabel" layoutX="896.0" layoutY="754.0" text="0" />
       <Label layoutX="141.0" layoutY="361.0" text="Simulation Time" />
       <TextField fx:id="simtime" layoutX="122.0" layoutY="388.0" promptText="Enter Simulation Time" />
       <Label layoutX="349.0" layoutY="361.0" text="Delay" />
@@ -171,21 +167,23 @@
       <Label layoutX="1033.0" layoutY="217.0" text="By EKG: " />
       <Label layoutX="1033.0" layoutY="249.0" text="By MRI: " />
       <Label layoutX="1033.0" layoutY="286.0" text="By Blood: " />
-      <Label fx:id="nurse1srvd1" layoutX="499.0" layoutY="161.0" text="0" />
-      <Label fx:id="nurse1srvd2" layoutX="496.0" layoutY="197.0" text="0" />
-      <Label fx:id="nurse1srvd4" layoutX="496.0" layoutY="270.0" text="0" />
-      <Label fx:id="gpsrvd" layoutX="788.0" layoutY="169.0" text="0" />
-      <Label fx:id="gpsrvd1" layoutX="788.0" layoutY="207.0" text="0" />
-      <Label fx:id="gpsrvd2" layoutX="788.0" layoutY="250.0" prefHeight="17.0" prefWidth="1.0" text="0" />
-      <Label fx:id="nurse1srvd3" layoutX="496.0" layoutY="234.0" prefHeight="17.0" prefWidth="1.0" text="0" />
+      <Label fx:id="nurse1srvd1" layoutX="497.0" layoutY="160.0" prefHeight="17.0" prefWidth="27.0" text="0" />
+      <Label fx:id="nurse1srvd2" layoutX="496.0" layoutY="197.0" prefHeight="17.0" prefWidth="14.0" text="0" />
+      <Label fx:id="nurse1srvd4" layoutX="496.0" layoutY="270.0" prefHeight="17.0" prefWidth="14.0" text="0" />
+      <Label fx:id="gpsrvd" layoutX="788.0" layoutY="169.0" prefHeight="17.0" prefWidth="14.0" text="0" />
+      <Label fx:id="gpsrvd1" layoutX="788.0" layoutY="207.0" prefHeight="17.0" prefWidth="14.0" text="0" />
+      <Label fx:id="gpsrvd2" layoutX="788.0" layoutY="250.0" prefHeight="17.0" prefWidth="14.0" text="0" />
+      <Label fx:id="nurse1srvd3" layoutX="496.0" layoutY="234.0" prefHeight="17.0" prefWidth="14.0" text="0" />
       <Line endX="100.0" layoutX="1115.0" layoutY="208.0" startX="-100.0" />
       <Line endX="100.0" layoutX="1116.0" layoutY="242.0" startX="-100.0" />
       <Line endX="100.0" layoutX="1116.0" layoutY="278.0" startX="-100.0" />
       <Line endX="100.0" layoutX="1116.0" layoutY="318.0" startX="-100.0" />
-      <Label layoutX="1115.0" layoutY="177.0" text="0" fx:id="xraysrvd" />
-      <Label fx:id="ekgsrvd" layoutX="1115.0" layoutY="217.0" text="0" />
-      <Label fx:id="mrisrvd" layoutX="1115.0" layoutY="258.0" text="0" />
-      <Label fx:id="bloodsrvd" layoutX="1115.0" layoutY="295.0" text="0" />
+      <Label layoutX="1115.0" layoutY="177.0" prefHeight="17.0" prefWidth="14.0" text="0" fx:id="xraysrvd" />
+      <Label fx:id="ekgsrvd" layoutX="1115.0" layoutY="217.0" prefHeight="17.0" prefWidth="14.0" text="0" />
+      <Label fx:id="mrisrvd" layoutX="1115.0" layoutY="258.0" prefHeight="17.0" prefWidth="14.0" text="0" />
+      <Label fx:id="bloodsrvd" layoutX="1115.0" layoutY="295.0" prefHeight="17.0" prefWidth="14.0" text="0" />
       <Label fx:id="receptionsrvd" layoutX="212.0" layoutY="168.0" text="0" />
+      <Ellipse fx:id="nurse1Q1" fill="WHITE" layoutX="105.0" layoutY="520.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="receptionQLabel" layoutX="91.0" layoutY="513.0" text="0" />
    </children>
 </Pane>
