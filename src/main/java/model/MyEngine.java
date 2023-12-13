@@ -5,6 +5,8 @@ import framework.Clock;
 import framework.Engine;
 import framework.Event;
 import distributions.Negexp;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 
 import java.util.Random;
 
@@ -32,7 +34,8 @@ public class MyEngine extends Engine {
     public MyEngine(ClinicSimController controller){
         super();
         this.controller = controller;
-        arrivalProcess = new Arrival(new Negexp(15), eventList);
+        arrivalProcess = new Arrival(new Negexp(controller.getArrivalDistrb()), eventList);
+        System.out.println(controller.getArrivalDistrb());
 
         servicePoint = new ServicePoint[12];
         servicePoint[0] = new Reception("Simu.model.Reception", new Negexp(10), eventList, EventType.DEP_RECEP,controller);
@@ -86,6 +89,7 @@ public class MyEngine extends Engine {
                     }
                 }
                 if (countNurse == 0){
+                    Random random = new Random();
                     servicePoint[random.nextInt(1, 4)].addToQueue(new Patient());
                     arrivalProcess.generateNextEvent();
                     break;
@@ -163,7 +167,7 @@ public class MyEngine extends Engine {
                     break;
                 }
                 else if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
-                    random = new Random();
+                   Random random = new Random();
                     int rand = random.nextInt(8, 10);
                     if (rand == 8){
                         servicePoint[8].addToQueue(a);
@@ -201,7 +205,7 @@ public class MyEngine extends Engine {
                         break;
                     }
                     else if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
-                        random = new Random();
+                       Random random = new Random();
                         int rand = random.nextInt(8, 10);
                         if (rand == 8){
                             servicePoint[8].addToQueue(a);
@@ -239,7 +243,7 @@ public class MyEngine extends Engine {
                         break;
                     }
                     else if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
-                        random = new Random();
+                        Random random = new Random();
                         int rand = random.nextInt(8, 10);
                         if (rand == 8){
                             servicePoint[8].addToQueue(a);
@@ -277,7 +281,7 @@ public class MyEngine extends Engine {
                         break;
                     }
                     else if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
-                        random = new Random();
+                       Random random = new Random();
                         int rand = random.nextInt(8, 10);
                         if (rand == 8){
                             servicePoint[8].addToQueue(a);
@@ -305,7 +309,7 @@ public class MyEngine extends Engine {
                 controller.updateserviced(servicePoint[5], servicePoint[5].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[5], servicePoint[5].isServicing());
                     if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
-                        random = new Random();
+                        Random random = new Random();
                         int rand = random.nextInt(8, 11);
                             if (rand == 8){
                                 servicePoint[8].addToQueue(a);
@@ -338,7 +342,7 @@ public class MyEngine extends Engine {
                 controller.updateserviced(servicePoint[6], servicePoint[6].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[6], servicePoint[6].isServicing());
                     if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
-                        random = new Random();
+                        Random random = new Random();
                         int rand = random.nextInt(8, 11);
                         if (rand == 8){
                             servicePoint[8].addToQueue(a);
@@ -371,7 +375,7 @@ public class MyEngine extends Engine {
                 controller.updateserviced(servicePoint[7], servicePoint[7].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[7], servicePoint[7].isServicing());
                 if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
-                    random = new Random();
+                   Random random = new Random();
                     int rand = random.nextInt(8, 11);
                     if (rand == 8){
                         servicePoint[8].addToQueue(a);
@@ -497,11 +501,33 @@ public class MyEngine extends Engine {
         }
     }
 
+        protected Label getPatientsServicedLabel(){
+            return controller.getPatientsServiced();
+        }
+    protected void updatePatientsServicedLabel(){
+        if (controller != null) {
+            controller.updatetotalserviced(getPatientsServicedLabel());
+        }
+    }
+    public int getuniquepatients(){
+        return patientsServiced;
+    }
+    protected Label getuniquepatientsLabel(){
+        return controller.getuniquepatients();
+    }
+    protected int getArrivalDistrb(){
+        return controller.getArrivalDistrb();
+    }
+    protected Label getSlidervalue(){
+        return controller.getSliderValue();
+    }
+
     protected void results() {
         System.out.printf("\nSimulation ended at %.2f\n", Clock.getInstance().getClock());
         System.out.println("Total customers serviced: " + servicePoint[1].getPatientServiced());
         System.out.println("Total patients serviced: " + patientsServiced);
-        //System.out.printf("Average service time: %.2f\n", servicePoint[0].getMeanServiceTime());
+        controller.updateuniqpatients(getuniquepatientsLabel(),this);
+        System.out.printf("Average service time: %.2f\n", servicePoint[0].getMeanServiceTime());
     }
 
     @Override
@@ -512,6 +538,7 @@ public class MyEngine extends Engine {
             System.out.printf("\n%sA-phase:%s time is %.2f\n", RED, WHITE, currentTime());
             Clock.getInstance().setClock(currentTime());
             controller.updateClock();
+            controller.updatetotalserviced(getPatientsServicedLabel());
 
             System.out.printf("%sB-phase:%s ", RED, WHITE);
             runBEvents();

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Ellipse?>
@@ -185,5 +186,12 @@
       <Label fx:id="receptionsrvd" layoutX="212.0" layoutY="168.0" text="0" />
       <Ellipse fx:id="nurse1Q1" fill="WHITE" layoutX="105.0" layoutY="520.0" radiusX="19.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="receptionQLabel" layoutX="91.0" layoutY="513.0" text="0" />
+      <Label layoutX="788.0" layoutY="361.0" prefHeight="17.0" prefWidth="124.0" text="Total patients serviced:" />
+      <Label fx:id="totalPatientsServiced" layoutX="916.0" layoutY="361.0" prefHeight="17.0" prefWidth="53.0" text="0" />
+      <Label layoutX="788.0" layoutY="380.0" prefHeight="17.0" prefWidth="124.0" text="Unique patients:" />
+      <Label fx:id="uniqpatients" layoutX="916.0" layoutY="380.0" prefHeight="17.0" prefWidth="26.0" text="0" />
+      <Slider fx:id="arrivalDistrb" layoutX="50.0" layoutY="148.0" majorTickUnit="2.0" max="15.0" min="1.0" minorTickCount="0" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" />
+      <Label layoutX="83.0" layoutY="178.0" text="Arrival" />
+      <Label fx:id="sliderValue" layoutX="86.0" layoutY="200.0" text="1" />
    </children>
 </Pane>
