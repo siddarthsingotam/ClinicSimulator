@@ -17,6 +17,11 @@ class ServicePointTest {
         ClinicSimController controller = new ClinicSimController();
         ServicePoint servicePoint = new ServicePoint(generator, eventList, controller) {
             @Override
+            protected Label getServicedLabel() {
+                return null;
+            }
+
+            @Override
             protected Label getQueueLabel() {
                 return null;
             }
@@ -36,8 +41,24 @@ class ServicePointTest {
         ClinicSimController controller = new ClinicSimController();
         ServicePoint servicePoint = new ServicePoint(generator, eventList, controller) {
             @Override
+            protected Label getServicedLabel() {
+                return null;
+            }
+
+            @Override
             protected Label getQueueLabel() {
                 return null;
+            }
+            @Override
+            public Patient removeFromQueue() {
+                if (queue.size() > 0) {
+                    Patient a = queue.removeLast();
+                    patientServiced++;
+                    reserved = false;
+
+                    return a;
+                } else
+                    return null;
             }
         };
 
@@ -55,8 +76,17 @@ class ServicePointTest {
         ClinicSimController controller = new ClinicSimController();
         ServicePoint servicePoint = new ServicePoint(generator, eventList, controller) {
             @Override
+            protected Label getServicedLabel() {
+                return null;
+            }
+
+            @Override
             protected Label getQueueLabel() {
                 return null;
+            }
+            @Override
+            public void beginService() {
+                setServicing(true);
             }
         };
 
