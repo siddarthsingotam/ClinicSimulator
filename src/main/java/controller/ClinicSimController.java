@@ -4,6 +4,7 @@ import framework.Engine;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
@@ -27,6 +28,8 @@ public class ClinicSimController {
 
     @FXML
     private Rectangle reception, nurse1, GP1, Xray, nurse3, nurse2, nurse4, GP2, GP3, EKG, MRI, Blood;
+    @FXML
+    private Label receptionsrvd,nurse1srvd1, nurse1srvd2, nurse1srvd3, nurse1srvd4, gpsrvd, gpsrvd1, gpsrvd2,xraysrvd,ekgsrvd,mrisrvd,bloodsrvd,totalPatientsServiced,uniqpatients, sliderValue;
 
     @FXML
     private Ellipse nurse1Q, nurse2Q, nurse3Q, nurse4Q, GP1Q, GP2Q, GP3Q, XrayQ, EKGQ, MRIQ, BloodQ;
@@ -37,6 +40,8 @@ public class ClinicSimController {
     private Button start;
     @FXML
     private TextField delaytime, simtime;
+    @FXML
+    private Slider arrivalDistrb;
 
 
     @FXML
@@ -44,6 +49,11 @@ public class ClinicSimController {
         rectangleToServicePointMap = new HashMap<>();
 
         ClinicSimController controller = this;
+        arrivalDistrb.valueProperty().addListener((observable, oldValue, newValue) -> {
+            sliderValue.setText(String.valueOf(newValue.intValue()));
+        });
+
+
         start.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -85,6 +95,9 @@ public class ClinicSimController {
         if(delaytime.getText().isEmpty()){
             return (long) 0.0;
         }
+        else if (Long.parseLong(delaytime.getText()) < 0){
+            return (long) 0.0;
+        }
         else{
             return Long.parseLong(delaytime.getText());
         }
@@ -102,7 +115,95 @@ public class ClinicSimController {
             label.setText(String.valueOf(queueSize));
         });
     }
+    @FXML
+    public void updateserviced(ServicePoint servicePoint, Label label) {
+        Platform.runLater(() -> {
+            int serviced = servicePoint.getPatientServiced();
+            label.setText(String.valueOf(serviced));
+        });
+    }
+    @FXML public void updatetotalserviced(Label label){
+        Platform.runLater(()->{
+            int serviced = 0;
+            for (ServicePoint servicePoint : rectangleToServicePointMap.values()) {
+                serviced += servicePoint.getPatientServiced();
+            }
+            label.setText(String.valueOf(serviced));
+        });
+    }
+    @FXML public void updateuniqpatients(Label label,MyEngine engine){
+        Platform.runLater(()->{
 
+
+            label.setText(String.valueOf(engine.getuniquepatients()));
+        });
+    }
+    @FXML
+    public Label getReceptionSrvd() {
+        return receptionsrvd;
+    }
+    @FXML
+    public int getArrivalDistrb() {
+        return (int) arrivalDistrb.getValue();
+    }
+    @FXML
+    public Label getNurse1Srvd1() {
+        return nurse1srvd1;
+    }
+
+    @FXML
+    public Label getNurse1Srvd2() {
+        return nurse1srvd2;
+    }
+
+    @FXML
+    public Label getNurse1Srvd3() {
+        return nurse1srvd3;
+    }
+    @FXML
+    public Label getuniquepatients() {
+        return uniqpatients;
+    }
+    @FXML
+    public Label getNurse1Srvd4() {
+        return nurse1srvd4;
+    }
+
+    @FXML
+    public Label getGpsrvd() {
+        return gpsrvd;
+    }
+
+    @FXML
+    public Label getGpsrvd1() {
+        return gpsrvd1;
+    }
+
+    @FXML
+    public Label getGpsrvd2() {
+        return gpsrvd2;
+    }
+
+
+    @FXML
+    public Label getXraysrvd() {
+        return xraysrvd;
+    }
+
+    @FXML
+    public Label getEkgsrvd() {
+        return ekgsrvd;
+    }
+
+    @FXML
+    public Label getMrisrvd() {
+        return mrisrvd;
+    }
+
+    @FXML
+    public Label getBloodsrvd() {
+        return bloodsrvd;
+    }
     @FXML
     public Label getBloodQLabel() {
         return BloodQLabel;
@@ -154,7 +255,14 @@ public class ClinicSimController {
     public Label getNurse4QLabel() {
         return nurse4QLabel;
     }
-
+@FXML
+    public Label getPatientsServiced() {
+        return totalPatientsServiced;
+    }
+    @FXML
+    public Label getSliderValue() {
+        return sliderValue;
+    }
 
     public static void main(String[] args) {
         ClinicSimGUI.launch(ClinicSimGUI.class);

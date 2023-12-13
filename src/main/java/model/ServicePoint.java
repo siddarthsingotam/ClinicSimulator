@@ -57,6 +57,14 @@ public abstract class ServicePoint { // Service points as abstract class to be i
             controller.updateQueueLabel(this, getQueueLabel());
         }
     }
+    private void updateServicedLabel() {
+        if (controller != null) {
+            controller.updateserviced(this, getServicedLabel());
+        }
+    }
+    protected abstract Label getServicedLabel();
+
+
         protected abstract Label getQueueLabel();
 
         public void beginService() {

@@ -22,6 +22,10 @@ public class EKG extends ServicePoint {
         protected Label getQueueLabel() {
             return controller.getEKGQLabel();
         }
+    @Override
+    protected Label getServicedLabel() {
+        return controller.getEkgsrvd();
+    }
         @Override
         public void beginService() {
             super.beginService();

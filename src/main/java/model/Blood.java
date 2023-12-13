@@ -17,10 +17,17 @@ public class Blood extends ServicePoint {
             this.eventTypeScheduled = type;
         }
 
-        @Override
+    @Override
+    protected Label getServicedLabel() {
+        return controller.getBloodsrvd();
+    }
+
+    @Override
         protected Label getQueueLabel() {
             return controller.getBloodQLabel();
         }
+
+
         @Override
         public void beginService() {
             super.beginService();

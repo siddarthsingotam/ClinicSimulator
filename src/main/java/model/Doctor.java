@@ -32,7 +32,19 @@ public class Doctor extends ServicePoint {
                 return null; // Or throw an exception
         }
     }
-
+    @Override
+    protected Label getServicedLabel() {
+        switch (name) {
+            case "Simu.model.Doctor 1":
+                return controller.getGpsrvd();
+            case "Simu.model.Doctor 2":
+                return controller.getGpsrvd1();
+            case "Simu.model.Doctor 3":
+                return controller.getGpsrvd2();
+            default:
+                return null; // Or throw an exception
+        }
+    }
         @Override
         public void beginService() {
             super.beginService();
