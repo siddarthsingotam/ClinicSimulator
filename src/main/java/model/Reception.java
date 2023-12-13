@@ -25,6 +25,10 @@ public class Reception extends ServicePoint{
     protected Label getQueueLabel() {
         return controller.getReceptionQLabel();
     }
+    @Override
+    protected Label getServicedLabel() {
+        return controller.getReceptionSrvd();
+    }
 
     @Override // Override beginService() method from Simu.model.ServicePoint
     public void beginService() {

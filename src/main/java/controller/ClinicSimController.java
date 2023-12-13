@@ -27,6 +27,8 @@ public class ClinicSimController {
 
     @FXML
     private Rectangle reception, nurse1, GP1, Xray, nurse3, nurse2, nurse4, GP2, GP3, EKG, MRI, Blood;
+    @FXML
+    private Label receptionsrvd,nurse1srvd1, nurse1srvd2, nurse1srvd3, nurse1srvd4, gpsrvd, gpsrvd1, gpsrvd2,xraysrvd,ekgsrvd,mrisrvd,bloodsrvd;
 
     @FXML
     private Ellipse nurse1Q, nurse2Q, nurse3Q, nurse4Q, GP1Q, GP2Q, GP3Q, XrayQ, EKGQ, MRIQ, BloodQ;
@@ -102,7 +104,73 @@ public class ClinicSimController {
             label.setText(String.valueOf(queueSize));
         });
     }
+    @FXML
+    public void updateserviced(ServicePoint servicePoint, Label label) {
+        Platform.runLater(() -> {
+            int serviced = servicePoint.getPatientServiced();
+            label.setText(String.valueOf(serviced));
+        });
+    }
+    @FXML
+    public Label getReceptionSrvd() {
+        return receptionsrvd;
+    }
 
+    @FXML
+    public Label getNurse1Srvd1() {
+        return nurse1srvd1;
+    }
+
+    @FXML
+    public Label getNurse1Srvd2() {
+        return nurse1srvd2;
+    }
+
+    @FXML
+    public Label getNurse1Srvd3() {
+        return nurse1srvd3;
+    }
+
+    @FXML
+    public Label getNurse1Srvd4() {
+        return nurse1srvd4;
+    }
+
+    @FXML
+    public Label getGpsrvd() {
+        return gpsrvd;
+    }
+
+    @FXML
+    public Label getGpsrvd1() {
+        return gpsrvd1;
+    }
+
+    @FXML
+    public Label getGpsrvd2() {
+        return gpsrvd2;
+    }
+
+
+    @FXML
+    public Label getXraysrvd() {
+        return xraysrvd;
+    }
+
+    @FXML
+    public Label getEkgsrvd() {
+        return ekgsrvd;
+    }
+
+    @FXML
+    public Label getMrisrvd() {
+        return mrisrvd;
+    }
+
+    @FXML
+    public Label getBloodsrvd() {
+        return bloodsrvd;
+    }
     @FXML
     public Label getBloodQLabel() {
         return BloodQLabel;

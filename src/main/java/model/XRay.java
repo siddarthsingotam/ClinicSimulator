@@ -22,6 +22,10 @@ public class XRay extends ServicePoint {
     protected Label getQueueLabel() {
         return controller.getXrayQLabel();
     }
+    @Override
+    protected Label getServicedLabel() {
+        return controller.getXraysrvd();
+    }
 
         @Override
         public void beginService() {

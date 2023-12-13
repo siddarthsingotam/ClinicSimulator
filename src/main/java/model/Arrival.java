@@ -27,7 +27,7 @@ public class Arrival {
 
     public EventType randomArrival() {
         random = new Random();
-        int rand = random.nextInt(1,7);
+        int rand = random.nextInt(1,8);
         return switch (rand) {
             case 1 -> EventType.ARR_NURSE;
             case 2 -> EventType.ARR_DOCTOR;

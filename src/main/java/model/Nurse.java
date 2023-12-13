@@ -35,7 +35,22 @@ public class Nurse extends ServicePoint {
             default:
                 return null; // Or throw an exception
         }
+    } @Override
+    protected Label getServicedLabel() {
+        switch (name) {
+            case "Simu.model.Nurse 1":
+                return controller.getNurse1Srvd1();
+            case "Simu.model.Nurse 2":
+                return controller.getNurse1Srvd2();
+            case "Simu.model.Nurse 3":
+                return controller.getNurse1Srvd3();
+            case "Simu.model.Nurse 4":
+                return controller.getNurse1Srvd4();
+            default:
+                return null; // Or throw an exception
+        }
     }
+
         @Override
         public void beginService() {
             super.beginService();

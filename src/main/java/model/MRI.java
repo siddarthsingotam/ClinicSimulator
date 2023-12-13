@@ -20,6 +20,10 @@ public class MRI extends ServicePoint{
             this.eventTypeScheduled = type;
         }
 
+    @Override
+    protected Label getServicedLabel() {
+        return controller.getMrisrvd();
+    }
         @Override
         protected Label getQueueLabel() {
             return controller.getMRIQLabel();

@@ -79,7 +79,7 @@ public class MyEngine extends Engine {
                 int countNurse = 0;
                 for(int i = 1; i < 5; i++) {
                     if (!servicePoint[i].isReserved()) {
-                        servicePoint[i].addToQueue(new Patient());
+                            servicePoint[i].addToQueue(new Patient());
                         arrivalProcess.generateNextEvent();
                         countNurse++;
                         break;
@@ -139,6 +139,7 @@ public class MyEngine extends Engine {
                 a = servicePoint[0].removeFromQueue();
                 servicePoint[0].endService();
                 controller.updateRectangleColor(servicePoint[0], servicePoint[0].isServicing());
+                controller.updateserviced(servicePoint[0], servicePoint[0].getServicedLabel());
                 for (int i = 1; i < 5; i++){
                     if(!servicePoint[i].isReserved()){
                         servicePoint[i].addToQueue(a);
@@ -150,6 +151,7 @@ public class MyEngine extends Engine {
             case DEP_NURSE1:
                 a = servicePoint[1].removeFromQueue();
                 servicePoint[1].endService();
+                controller.updateserviced(servicePoint[1], servicePoint[1].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[1], servicePoint[1].isServicing());
                 if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                     for (int i = 5; i < 8; i++){
@@ -187,6 +189,7 @@ public class MyEngine extends Engine {
             case DEP_NURSE2:
                 a = servicePoint[2].removeFromQueue();
                 servicePoint[2].endService();
+                controller.updateserviced(servicePoint[2], servicePoint[2].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[2], servicePoint[2].isServicing());
                     if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                         for (int i = 5; i < 8; i++){
@@ -224,6 +227,7 @@ public class MyEngine extends Engine {
             case DEP_NURSE3:
                 a = servicePoint[3].removeFromQueue();
                 servicePoint[3].endService();
+                controller.updateserviced(servicePoint[3], servicePoint[3].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[3], servicePoint[3].isServicing());
                     if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                         for (int i = 5; i < 8; i++){
@@ -261,6 +265,7 @@ public class MyEngine extends Engine {
             case DEP_NURSE4:
                 a = servicePoint[4].removeFromQueue();
                 servicePoint[4].endService();
+                controller.updateserviced(servicePoint[4], servicePoint[4].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[4], servicePoint[4].isServicing());
                     if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                         for (int i = 5; i < 8; i++){
@@ -297,6 +302,7 @@ public class MyEngine extends Engine {
             case DEP_DOCTOR1:
                 a = servicePoint[5].removeFromQueue();
                 servicePoint[5].endService();
+                controller.updateserviced(servicePoint[5], servicePoint[5].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[5], servicePoint[5].isServicing());
                     if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
                         random = new Random();
@@ -329,6 +335,7 @@ public class MyEngine extends Engine {
             case DEP_DOCTOR2:
                 a = servicePoint[6].removeFromQueue();
                 servicePoint[6].endService();
+                controller.updateserviced(servicePoint[6], servicePoint[6].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[6], servicePoint[6].isServicing());
                     if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
                         random = new Random();
@@ -361,6 +368,7 @@ public class MyEngine extends Engine {
             case DEP_DOCTOR3:
                 a = servicePoint[7].removeFromQueue();
                 servicePoint[7].endService();
+                controller.updateserviced(servicePoint[7], servicePoint[7].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[7], servicePoint[7].isServicing());
                 if(a.getLabAppointment() && !a.getLabVisit()){ // if LabAppointment is true, go to lab
                     random = new Random();
@@ -394,6 +402,7 @@ public class MyEngine extends Engine {
                 a = servicePoint[8].removeFromQueue();
                 servicePoint[8].endService();
                 controller.updateRectangleColor(servicePoint[8], servicePoint[8].isServicing());
+                controller.updateserviced(servicePoint[8], servicePoint[8].getServicedLabel());
                 if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                     for (int i = 5; i < 8; i++){
                         if(!servicePoint[i].isReserved()){
@@ -414,6 +423,7 @@ public class MyEngine extends Engine {
             case DEP_BLOOD:
                 a = servicePoint[9].removeFromQueue();
                 servicePoint[9].endService();
+                controller.updateserviced(servicePoint[9], servicePoint[9].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[9], servicePoint[9].isServicing());
                 if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                     for (int i = 5; i < 8; i++){
@@ -435,7 +445,9 @@ public class MyEngine extends Engine {
             case DEP_EKG:
                 a = servicePoint[10].removeFromQueue();
                 servicePoint[10].endService();
+                controller.updateserviced(servicePoint[10], servicePoint[10].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[10], servicePoint[10].isServicing());
+
                 if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                     for (int i = 5; i < 8; i++){
                         if(!servicePoint[i].isReserved()){
@@ -456,6 +468,7 @@ public class MyEngine extends Engine {
             case DEP_MRI:
                 a = servicePoint[11].removeFromQueue();
                 servicePoint[11].endService();
+                controller.updateserviced(servicePoint[11], servicePoint[11].getServicedLabel());
                 controller.updateRectangleColor(servicePoint[11], servicePoint[11].isServicing());
                 if(a.getDoctorAppointment()){ // if DoctorAppointment is true, go to doctor
                     for (int i = 5; i < 8; i++){
