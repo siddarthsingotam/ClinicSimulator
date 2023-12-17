@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.klinicsim","l":"controller"},{"m":"com.example.klinicsim","l":"distributions"},{"m":"com.example.klinicsim","l":"framework"},{"m":"com.example.klinicsim","l":"model"},{"m":"com.example.klinicsim","l":"view"}];updateSearchResults();
